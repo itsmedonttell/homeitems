@@ -21,11 +21,13 @@
   [
     {
         "filename": "IMG_1660.jpeg",
-        "description": "Large and small plates and bowls"
+        "description": "Large and small plates and bowls",
+        "available": true
     },
     {
         "filename": "IMG_1661.jpeg",
-        "description": "Pasta-dish sized bowls"
+        "description": "Pasta-dish sized bowls",
+        "available": true
     },
     {
         "filename": "IMG_1662.jpeg",
@@ -33,95 +35,118 @@
     },
     {
         "filename": "IMG_1666.jpeg",
-        "description": "Cuisinart blender system"
+        "description": "Cuisinart blender system",
+        "available": true
     },
     {
         "filename": "IMG_1667.jpeg",
-        "description": "Electric hot-water kettle"
+        "description": "Electric hot-water kettle",
+        "available": true
     },
     {
         "filename": "IMG_1668.jpeg",
-        "description": "Emerson toaster over"
+        "description": "Emerson toaster over",
+        "available": true
     },
     {
         "filename": "IMG_1669.jpeg",
-        "description": "Lamp"
+        "description": "Lamp",
+        "available": true
     },
     {
         "filename": "IMG_1670.jpeg",
-        "description": "Table with insertable leaf"
+        "description": "Table with insertable leaf",
+        "available": true
     },
     {
         "filename": "IMG_1671.jpeg",
-        "description": "Table with insertable leaf"
+        "description": "Table with insertable leaf",
+        "available": true
     },
     {
         "filename": "IMG_1672.jpeg",
-        "description": "Reinforced wood table with polyurethyne finish"
+        "description": "Reinforced wood table with polyurethyne finish",
+        "available": true
     },
     {
         "filename": "IMG_1673.jpeg",
-        "description": "Reinforced wood table with polyurethyne finish"
+        "description": "Reinforced wood table with polyurethyne finish",
+        "available": true
     },
     {
         "filename": "IMG_1674.jpeg",
-        "description": "Medium/large-sized mirror with wooden frame"
+        "description": "Medium/large-sized mirror with wooden frame",
+        "available": true
     },
     {
         "filename": "IMG_1675.jpeg",
-        "description": "Various jackets (size: M/L) - many Size 10 shoes available too"
+        "description": "Various jackets (size: M/L) - many Size 10 shoes available too",
+        "available": true
     },
     {
         "filename": "IMG_1676.jpeg",
-        "description": "Honeywell oscillating space heater with remote"
+        "description": "Honeywell oscillating space heater with remote",
+        "available": false
     },
     {
         "filename": "IMG_1677.jpeg",
-        "description": "Hydroloic and rotating stool on casters (2 or 3 available)"
+        "description": "Hydroloic and rotating stool on casters (2 or 3 available)",
+        "available": false
     },
     {
         "filename": "IMG_1678.jpeg",
-        "description": "Sony bluetooth speaker and conference speaker "
+        "description": "Sony bluetooth speaker and conference speaker",
+        "available": true
     },
     {
         "filename": "IMG_1679.jpeg",
-        "description": "Amazon Echo and Big Jambox"
+        "description": "Amazon Echo and Big Jambox",
+        "available": true
     },
     {
         "filename": "IMG_1680.jpeg",
-        "description": "Red plastic chair (two navy blue available too)"
+        "description": "Red plastic chair (two navy blue available too)",
+        "available": true
     },
     {
         "filename": "IMG_1681.jpeg",
-        "description": "Wooden cart on casters with glass top"
+        "description": "Wooden cart on casters with glass top",
+        "available": true
     },
     {
         "filename": "blue-chair.jpg",
-        "description": "Navy blue plastic chairs (2 available)"
+        "description": "Navy blue plastic chairs (2 available)",
+        "available": true
     },
     {
         "filename": "blue-chair-arms.jpg",
-        "description": "Navy blue plastic chairs with arms (2 available)"
+        "description": "Navy blue plastic chairs with arms (2 available)",
+        "available": true
     },
     {
         "filename": "IMG_1684.jpeg",
-        "description": "Decline/incline weight bench"
+        "description": "Decline/incline weight bench",
+        "available": true
     },
     {
         "filename": "IMG_1685.jpeg",
-        "description": "Working fans"
+        "description": "Working fans",
+        "available": true
     },
     {
         "filename": "IMG_1686.jpeg",
-        "description": "Combo dry-vac and blower"
+        "description": "Combo dry-vac and blower",
+        "available": true
     },
     {
         "filename": "IMG_1687.jpeg",
-        "description": "TCL Roku 32-inch TV with remote"
+        "description": "TCL Roku 32-inch TV with remote",
+        "available": true
     },
     {
         "filename": "IMG_1688.jpeg",
-        "description": "Rolling file cabinet and two skillets"
+        "description": "Rolling file cabinet and two skillets",
+        "available": false
     }
 ]
 </script>
@@ -135,7 +160,7 @@
 
   <script>
     const item_data = JSON.parse(document.getElementById("item-data").text);
-    item_data.forEach((datum, index) => {
+    item_data.filter(datum => datum.available === true).forEach((datum, index) => {
       const figure = document.createElement('figure');
       const img = document.createElement('img');
       img.src = `images/items/${datum.filename}`;
