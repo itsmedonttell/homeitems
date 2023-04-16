@@ -1,0 +1,31 @@
+body, figcaption {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 2.5vw;
+}
+
+section.gallery {
+    display: grid;
+    /* border: 1px solid black; */
+    /* grid-template-rows: auto; */
+    /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    width: calc(100vw - 5vw);
+    grid-gap: 2vw;
+}
+
+figure {
+    margin: 0;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    min-width: 0;
+}
+
+img.item {
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
